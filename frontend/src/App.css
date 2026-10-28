@@ -1,0 +1,88 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.welcome-card {
+  width: 100%;
+  max-width: 640px;
+  padding: 56px 40px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e1e8f0;
+  border-radius: 24px;
+  box-shadow: 0 16px 48px rgba(25, 48, 75, 0.06);
+}
+
+.brand-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #176b83;
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.eyebrow {
+  color: #176b83;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  color: #142b3d;
+  font-size: clamp(32px, 6vw, 52px);
+  letter-spacing: -1.5px;
+}
+
+h1 span {
+  color: #176b83;
+}
+
+.tagline {
+  font-size: 20px;
+  font-weight: 600;
+  color: #29465b;
+}
+
+.description {
+  max-width: 470px;
+  margin: 24px auto;
+  color: #53677a;
+  line-height: 1.8;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 10px 16px;
+  border-radius: 30px;
+  background: #eaf5f3;
+  color: #205c50;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #23866e;
+}
+
+@media (max-width: 480px) {
+  .welcome-card {
+    padding: 40px 24px;
+  }
+}
