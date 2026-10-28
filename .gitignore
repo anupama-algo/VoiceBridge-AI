@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# JavaScript / React
+node_modules/
+dist/
+coverage/
+.vite/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Machine learning artifacts and private data
+ml/models/*.joblib
+ml/models/*.pkl
+ml/data/private/
+ml/data/raw/
+
+# Temporary files
+*.log
+*.tmp
