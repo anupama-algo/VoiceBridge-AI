@@ -1,88 +1,229 @@
+
 .app-container {
   min-height: 100vh;
+  padding: 48px 24px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 24px;
+  align-items: flex-start;
 }
 
-.welcome-card {
+.communication-board {
   width: 100%;
-  max-width: 640px;
-  padding: 56px 40px;
-  text-align: center;
+  max-width: 1050px;
+  padding: 40px;
   background: #ffffff;
-  border: 1px solid #e1e8f0;
+  border: 1px solid #dce7ed;
   border-radius: 24px;
-  box-shadow: 0 16px 48px rgba(25, 48, 75, 0.06);
+  box-shadow: 0 16px 48px rgba(20, 55, 75, 0.06);
+}
+
+.board-header {
+  text-align: center;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e5edf2;
 }
 
 .brand-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 28px;
-  display: grid;
-  place-items: center;
-  border-radius: 18px;
-  background: #176b83;
-  color: white;
-  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #117896;
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 800;
 }
 
 .eyebrow {
-  color: #176b83;
-  font-size: 12px;
+  color: #176b85;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.6px;
 }
 
-h1 {
-  margin: 18px 0 12px;
-  color: #142b3d;
-  font-size: clamp(32px, 6vw, 52px);
+.board-header h1 {
+  margin: 12px 0;
+  font-size: clamp(30px, 5vw, 42px);
   letter-spacing: -1.5px;
+  color: #142d42;
 }
 
-h1 span {
-  color: #176b83;
+.board-header h1 span {
+  color: #117896;
 }
 
 .tagline {
-  font-size: 20px;
-  font-weight: 600;
-  color: #29465b;
+  color: #52687a;
+  font-size: 15px;
 }
 
-.description {
-  max-width: 470px;
-  margin: 24px auto;
-  color: #53677a;
-  line-height: 1.8;
+.communication-board section h2 {
+  margin: 0 0 12px;
+  color: #19364a;
+  font-size: 22px;
 }
 
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+.communication-board section > p,
+.communication-board label {
+  display: block;
+  margin-bottom: 16px;
+  color: #52687a;
+  font-size: 14px;
+}
+
+#message-input {
+  display: block;
+  width: 100%;
+  min-height: 130px;
+  padding: 18px;
+  resize: vertical;
+  border: 1px solid #cbdce5;
+  border-radius: 14px;
+  background: #f8fbfd;
+  color: #19364a;
+  font: inherit;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+#message-input:focus {
+  outline: 3px solid #a8dce9;
+  outline-offset: 2px;
+  border-color: #117896;
+}
+
+.composer-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-top: 16px;
-  padding: 10px 16px;
-  border-radius: 30px;
-  background: #eaf5f3;
-  color: #205c50;
-  font-size: 13px;
-  font-weight: 600;
 }
 
-.status-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #23866e;
+.composer-actions button,
+.category-filters button {
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid #cadce5;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #19364a;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.composer-actions button:first-child {
+  background: #117896;
+  color: #ffffff;
+  border-color: #117896;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: 3px solid #117896;
+  outline-offset: 3px;
+}
+
+.composer-actions button:not(:disabled):hover,
+.category-filters button:hover,
+.phrase-card:hover {
+  border-color: #117896;
+}
+
+.communication-board section + section {
+  margin-top: 40px;
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.category-filters button[aria-pressed="true"] {
+  background: #e2f3f7;
+  color: #075c75;
+  border-color: #117896;
+}
+
+.phrase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.phrase-card {
+  min-height: 125px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  text-align: left;
+  background: #f5fafc;
+  border: 1px solid #d7e7ee;
+  border-radius: 16px;
+  color: #19364a;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.phrase-card:hover {
+  background: #e9f5f9;
+}
+
+.phrase-card span {
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.phrase-card small {
+  color: #557488;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px 12px;
+  }
+
+  .communication-board {
+    padding: 24px 18px;
+  }
+
+  .phrase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 480px) {
-  .welcome-card {
-    padding: 40px 24px;
+  .phrase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .composer-actions button {
+    flex: 1;
+  }
+
+  .phrase-card {
+    min-height: 95px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phrase-card {
+    transition: none;
   }
 }
